@@ -1,0 +1,27 @@
+/* CSS Document */
+
+#content {
+	margin: auto auto auto auto;
+	width: 50%;
+	text-align: center;
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+	border-color:#000;
+	border-style:solid;	
+	
+	
+}
+
+#cform{
+
+
+	text-align: center;	
+	
+}
+
+label {
+width:20px;    /*Or however much space you need for the form’s labels*/
+    float:left;
+}
