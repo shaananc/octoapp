@@ -1,4 +1,4 @@
-<%= form_for(@person) do |f| %>
+<%= form_for(@person, html: {class: "form-horizontal"}) do |f| %>
   <% if @person.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
@@ -17,11 +17,11 @@
   </div>
   <div class="control-group">
     <%= f.label :age, class:'control-label' %><br />
-    <div class= "controls form-inline">
-    <%= radio_button_tag(:age, "18")%>
-	<%= label_tag(:age_18, "18 and Under")%>
-    <%= radio_button_tag(:age, "30")%>
-	<%= label_tag(:age_30, "18-30")%>	
+    <div class= "controls">
+    <%= radio_button_tag(:age , "child") %>
+	<%= label_tag(:age_18, "18 and Under", :class=>'radio')%>
+    <%= radio_button_tag(:age, "adult")%>
+	<%= label_tag(:age_30, "18+", :class=>'radio')%>	
 	</div>
   </div>
   <div class="field">
@@ -36,7 +36,8 @@
     <%= f.label :school %><br />
     <%= f.text_field :school %>
   </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class =>'btn-primary' %>
   </div>
 <% end %>

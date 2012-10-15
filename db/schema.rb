@@ -21,13 +21,6 @@ ActiveRecord::Schema.define(:version => 20120928152212) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "penn_classes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "dept"
-  end
-
   create_table "people", :force => true do |t|
     t.string   "name"
     t.integer  "age"
