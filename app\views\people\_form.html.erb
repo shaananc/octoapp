@@ -1,0 +1,43 @@
+<%= form_for(@person, html: {class: "form-horizontal"}) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="control-group">
+    <%= f.label :age, class:'control-label' %><br />
+    <div class= "controls">
+    <%= radio_button_tag("person[age]" , 0) %>
+	<%= label_tag(:age_18, "18 and Under", :class=>'radio')%>
+    <%= radio_button_tag("person[age]", 1)%>
+	<%= label_tag(:age_30, "18+", :class=>'radio')%>	
+	</div>
+  </div>
+  <div class="field">
+    <%= f.label :building %><br />
+    <%= f.text_field :building %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit 'Submit', :class =>'btn-primary' %>
+  </div>
+<% end %>

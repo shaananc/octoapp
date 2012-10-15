@@ -1,0 +1,30 @@
+ <div class="masthead">
+<h1>Hookup Today!</h1><br><h2> Make Yourself a Match</h2>
+</div>
+
+<table class="table">
+  <tr>
+    <th>Date</th>
+    <th>Partner A</th>
+    <th>Partner B</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hookups.each do |hookup| %>
+  <tr>
+    <td><%= hookup.date %></td>
+    <td><%= hookup.partnera %></td>
+    <td><%= hookup.partnerb %></td>
+    <td><%= link_to 'Show', hookup %></td>
+    <td><%= link_to 'Edit', edit_hookup_path(hookup) %></td>
+    <td><%= link_to 'Destroy', hookup, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hookup', new_hookup_path, :class=>'btn btn-primary' %>
+<%= link_to 'New Person', new_person_path, :class=>'btn btn-primary' %>

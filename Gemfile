@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 
+#   gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -19,7 +22,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -39,4 +41,5 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+ #gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'debugger'
