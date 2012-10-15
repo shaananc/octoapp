@@ -15,9 +15,14 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
+  <div class="control-group">
+    <%= f.label :age, class:'control-label' %><br />
+    <div class= "controls form-inline">
+    <%= radio_button_tag(:age, "18")%>
+	<%= label_tag(:age_18, "18 and Under")%>
+    <%= radio_button_tag(:age, "30")%>
+	<%= label_tag(:age_30, "18-30")%>	
+	</div>
   </div>
   <div class="field">
     <%= f.label :building %><br />

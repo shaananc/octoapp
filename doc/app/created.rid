@@ -1,0 +1,7 @@
+Fri, 28 Sep 2012 11:07:13 -0400
+doc/README_FOR_APP	Wed, 05 Sep 2012 18:53:36 -0400
+app/controllers/application_controller.rb	Wed, 05 Sep 2012 18:53:35 -0400
+app/controllers/people_controller.rb	Wed, 12 Sep 2012 21:12:33 -0400
+app/helpers/application_helper.rb	Wed, 05 Sep 2012 18:53:35 -0400
+app/helpers/people_helper.rb	Wed, 12 Sep 2012 21:12:33 -0400
+app/models/person.rb	Wed, 12 Sep 2012 21:12:33 -0400

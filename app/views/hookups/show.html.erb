@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @hookup.date %>
+</p>
+
+<p>
+  <b>Partnera:</b>
+  <%= @hookup.partnera %>
+</p>
+
+<p>
+  <b>Partnerb:</b>
+  <%= @hookup.partnerb %>
+</p>
+
+
+<%= link_to 'Edit', edit_hookup_path(@hookup) %> |
+<%= link_to 'Back', hookups_path %>
