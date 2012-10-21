@@ -1,6 +1,7 @@
 class HookupsController < ApplicationController
   # GET /hookups
   # GET /hookups.json
+
   def index
     @hookups = Hookup.all
 
@@ -57,7 +58,7 @@ class HookupsController < ApplicationController
   # PUT /hookups/1.json
   def update
     @hookup = Hookup.find(params[:id])
-
+    
     respond_to do |format|
       if @hookup.update_attributes(params[:hookup])
         format.html { redirect_to @hookup, notice: 'Hookup was successfully updated.' }

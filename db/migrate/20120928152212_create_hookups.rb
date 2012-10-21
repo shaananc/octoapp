@@ -4,6 +4,7 @@ class CreateHookups < ActiveRecord::Migration
       t.datetime :date
       t.string :partnera
       t.string :partnerb
+      t.string :person_id
 
       t.timestamps
     end

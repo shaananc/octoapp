@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
+
   def index
     @people = Person.all
 
@@ -80,4 +81,12 @@ class PeopleController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+def list
+  @people = Person.find(:all)
 end
+
+end
+
+

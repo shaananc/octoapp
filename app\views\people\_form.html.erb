@@ -1,43 +1,12 @@
-<%= form_for(@person, html: {class: "form-horizontal"}) do |f| %>
-  <% if @person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+ <%= semantic_form_for @person do |f| %>
+ <%= f.semantic_errors %>
 
-      <ul>
-      <% @person.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= f.inputs do%>
+    	<%= f.input :name %>
+    	<%= f.input :age %>
+    	<%= f.input  :building %>
+    	<%= f.input :gender, :as => :select, :collection => ["Male", "Female"] %>
+    	<%= f.input :school %>
+    	<% end%>
+    <%= f.actions :submit, :cancel%>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field"><br />
-    <%= f.label :age, class:'radio' %><br />
-    <div class= "">
-    <%= radio_button_tag("person[age]" , 0) %>
-	<%= label_tag(:age_18, "18 and Under")%>
-    <%= radio_button_tag("person[age]", 1)%>
-	<%= label_tag(:age_30, "18+")%>	
-	</div>
-  </div>
-  <div class="field">
-    <%= f.label :building %><br />
-    <%= f.text_field :building %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :school %><br />
-    <%= f.text_field :school %>
-  </div>
-  <br>
-  <div class="form-actions">
-    <%= f.submit 'Submit', :class =>'btn btn-primary' %>
-  </div>
-<% end %>

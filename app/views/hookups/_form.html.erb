@@ -1,29 +1,11 @@
-<%= form_for(@hookup) do |f| %>
-  <% if @hookup.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hookup.errors.count, "error") %> prohibited this hookup from being saved:</h2>
+ <%= semantic_form_for @hookup do |f| %>
+    <%= f.semantic_errors %>
+    <%= f.inputs do %>
+    <%= f.input :person, :name => "person", :as => :select, :collection => Person.all, :label => "Person" %>
+    <%= f.input :date %>
+    <%= f.input :partnera %>
+    <%= f.input :partnerb %>
+    <% end %>
+    <%= f.actions :submit, :cancel%>
 
-      <ul>
-      <% @hookup.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :partnera %><br />
-    <%= f.text_field :partnera %>
-  </div>
-  <div class="field">
-    <%= f.label :partnerb %><br />
-    <%= f.text_field :partnerb %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
