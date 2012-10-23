@@ -26,7 +26,11 @@ class HookupsController < ApplicationController
   # GET /hookups/new.json
   def new
     @hookup = Hookup.new
-
+    
+    ##BAD CODE! Change Later
+    @hookup.person_a = Person.find(:first)
+    @hookup.person_b = Person.find(:all)[1]
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @hookup }

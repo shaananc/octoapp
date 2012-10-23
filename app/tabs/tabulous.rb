@@ -86,6 +86,7 @@ Tabulous.setup do |config|
       #------------------------------------------------------------#
       [    :hookups      ,    :all_actions    ,    :hookups_tab    ],
       [    :people       ,    :all_actions    ,    :people_tab     ],
+      [    :welcome       ,    :all_actions    ,   :hookups_tab     ],
       #------------------------------------------------------------#
       #    CONTROLLER    |    ACTION          |    TAB             #
       #------------------------------------------------------------#

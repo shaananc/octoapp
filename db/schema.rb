@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(:version => 20120928152212) do
     t.datetime "date"
     t.string   "partnera"
     t.string   "partnerb"
-    t.string   "person_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "person_a_id"
+    t.string   "person_b_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "people", :force => true do |t|
