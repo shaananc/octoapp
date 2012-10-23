@@ -21,3 +21,26 @@
 body { 
     padding-top: 65px; 
 }
+
+footer {
+   position:absolute;
+  bottom:0;
+   width: 100%;
+  background: #454545;
+  padding-left: 0px;
+  padding-right: 0px;
+  clear: both;
+  -webkit-box-shadow: inset 7px 7px 15px -5px #202020;
+  -moz-box-shadow: inset 7px 7px 15px -5px #202020;
+  box-shadow: inset 7px 7px 15px -5px #202020;
+  height:105px
+}
+
+
+footer #tag {
+   color: #666;
+  font-size: 12px;
+  line-height: 2.2em;
+  padding: 2.2em 0.5em;
+  text-align: center;
+}
