@@ -5,8 +5,8 @@
 <table class="table">
   <tr>
     <th>Date</th>
-    <th>Partner A</th>
-    <th>Partner B</th>
+    <th>Person A</th>
+    <th>Person B</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,8 +15,8 @@
 <% @hookups.each do |hookup| %>
   <tr>
     <td><%= hookup.date %></td>
-    <td><%= hookup.partnera %></td>
-    <td><%= hookup.partnerb %></td>
+    <td><%= hookup.person_a.name %></td>
+    <td><%= hookup.person_b.name %></td>
     <td><%= link_to 'Show', hookup %></td>
     <td><%= link_to 'Edit', edit_hookup_path(hookup) %></td>
     <td><%= link_to 'Destroy', hookup, confirm: 'Are you sure?', method: :delete %></td>
