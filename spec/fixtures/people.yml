@@ -1,0 +1,13 @@
+shaanan:
+  name: Shaanan
+  age: 21
+  building: Moore
+  gender: Male
+  school: SEAS
+  
+ariana:
+  name: Ariana
+  age: 18
+  building: Moore
+  gender: Female
+  school: SEAS
