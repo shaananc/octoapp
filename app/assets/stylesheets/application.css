@@ -8,15 +8,39 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+
  * 
  *= require bootstrap-without-forms
  *= require formtastic-plus-bootstrap
  * 
+ *= require_self
+ *= require_tree ./main/
 */
 @import "bootstrap";
 
 body { 
     padding-top: 65px; 
+}
+
+footer {
+   position:absolute;
+  bottom:0;
+   width: 100%;
+  background: #454545;
+  padding-left: 0px;
+  padding-right: 0px;
+  clear: both;
+  -webkit-box-shadow: inset 7px 7px 15px -5px #202020;
+  -moz-box-shadow: inset 7px 7px 15px -5px #202020;
+  box-shadow: inset 7px 7px 15px -5px #202020;
+  height:105px
+}
+
+
+footer #tag {
+   color: #666;
+  font-size: 12px;
+  line-height: 2.2em;
+  padding: 2.2em 0.5em;
+  text-align: center;
 }

@@ -84,7 +84,7 @@ class PeopleController < ApplicationController
 
 
 def list
-  @people = Person.find(:all)
+  @p = Person.find(:all)
 end
 
 end
