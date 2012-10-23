@@ -14,8 +14,8 @@
  *= require formtastic-plus-bootstrap
  * 
  *= require_self
+*= require twitter/bootstrap
 */
-@import "bootstrap";
 
 body { 
     padding-top: 65px; 
