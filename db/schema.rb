@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(:version => 20120928152212) do
 
   create_table "hookups", :force => true do |t|
     t.datetime "date"
-    t.string   "partnera"
-    t.string   "partnerb"
     t.string   "person_a_id"
     t.string   "person_b_id"
     t.datetime "created_at",  :null => false

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Hookup do
+describe Hookup, :js => true do
   fixtures :people
   
   before do
