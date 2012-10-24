@@ -28,8 +28,9 @@ class HookupsController < ApplicationController
     @hookup = Hookup.new
     
     ##BAD CODE! Change Later
-    @hookup.person_a = Person.find(:first)
+    @hookup.person_a = Person.find(:all)[0]
     @hookup.person_b = Person.find(:all)[1]
+    rescue ActiveRecord::MissingAttributeError
     
     respond_to do |format|
       format.html # new.html.erb
