@@ -14,23 +14,7 @@
    <a class="brand" href="/">Penn Hookups</a>
    <div class="nav-collapse">
     <%= tabs %>
-    						<ul class="nav nav-pills">
-							<li>
-								<% if person_signed_in? %>
-
-								<%= link_to 'Logout',
-								destroy_person_session_path,
-								:method => :delete, :html => {:style => 'color:#00688B' } %>
-								<% else %>
-
-								<%= link_to 'Sign In',
-								new_person_session_path, :html => {:style => 'color:#00688B' } %>
-
-								<%= %>
-								<% end %>
-
-							</li>
-						</ul>
+    						
    </div>
   </div>
  </div>
