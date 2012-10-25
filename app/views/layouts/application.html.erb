@@ -18,8 +18,8 @@
 							<% if person_signed_in? %>
 							<ul class="nav nav-pills"><li>
 							<%= link_to 'Logout',
-							destroy_person_session_path, {:style => 'color:#00688B' } ,
-							method: :delete %>
+							destroy_person_session_path, 
+							:method => :delete, :html => {:style => 'color:#00688B' } %>
 							</li></ul>
 							<% end %>
 
