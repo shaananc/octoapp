@@ -4,16 +4,18 @@
  //*= require bootstrap
 
 body{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 13px;
-line-height: 18px;
-color: #333;
+
 padding-top: 30px;
 background-color:#000;
   
 }
 
 #masthead{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 13px;
+line-height: 18px;
+color: #333;
+  
 background-image:url("love.png");
 background-size: 100%;
 background-repeat: no-repeat;
