@@ -1,7 +1,7 @@
 class HookupsController < ApplicationController
   # GET /hookups
   # GET /hookups.json
-
+  before_filter :authenticate_person!
   def index
     @hookups = Hookup.all
 

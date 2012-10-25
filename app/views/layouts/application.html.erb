@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Penn Hookups</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>Penn Hookups</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
 
-<div class="navbar navbar-fixed-top">
- <div class="navbar-inner">
-  <div class="container">
-   <a class="brand" href="/">Penn Hookups</a>
-   <div class="nav-collapse">
-    <%= tabs %>
-   </div>
-  </div>
- </div>
-</div>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">Penn Hookups</a>
+					<div class="nav-collapse">
+						<%= tabs %>
 
-<div class="container">
-  <%= yield %>
-</div>
+							<% if person_signed_in? %>
+							<ul class="nav nav-pills"><li>
+							<%= link_to 'Logout',
+							destroy_person_session_path, {:style => 'color:#00688B' } ,
+							method: :delete %>
+							</li></ul>
+							<% end %>
 
-<footer>
-				<div id="tag">
-				***<br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<% if alert %>
+			<div class="alert alert-error">
+				<%= alert %>
+			</div>
+			<% end %>
+			<% if notice %>
+			<div class="notice notice-error">
+				<%= notice %>
+			</div>
+			<% end %>
+
+			<%= yield %>
+		</div>
+
+		<footer>
+			<div id="tag">
+				***
+				<br>
 				© 2012, Shaanan Cohney
 			</div>
-	</footer>
+		</footer>
 
-</body>
+	</body>
 </html>
