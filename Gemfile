@@ -30,6 +30,9 @@ gem 'jquery-rails'
 gem 'formtastic' , '~> 2.2.1'
 gem 'formtastic-plus-bootstrap'
 gem 'tabulous'
+gem 'devise'
+gem 'rails_admin', :github => 'sferik/rails_admin'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

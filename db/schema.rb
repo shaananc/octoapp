@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928152212) do
+ActiveRecord::Schema.define(:version => 20121024203334) do
 
   create_table "hookups", :force => true do |t|
     t.datetime "date"
-    t.string   "partnera"
-    t.string   "partnerb"
     t.string   "person_a_id"
+    t.string   "person_b_id"
     t.string   "person_b_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -29,8 +28,34 @@ ActiveRecord::Schema.define(:version => 20120928152212) do
     t.string   "building"
     t.string   "gender"
     t.string   "school"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "people", ["email"], :name => "index_people_on_email", :unique => true
+  add_index "people", ["reset_password_token"], :name => "index_people_on_reset_password_token", :unique => true
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
 end

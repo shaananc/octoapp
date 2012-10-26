@@ -59,6 +59,8 @@ Tabulous.setup do |config|
       #------------------------------------------------------------------------------------------------#
       [    :hookups_tab    ,    'Hookups'       ,    hookups_path    ,    true        ,    true        ],
       [    :people_tab     ,    'People'        ,    people_path     ,    true        ,    true        ],
+      [    :signin_tab     ,     'Sign In'      ,    new_person_session_path, !person_signed_in?, true ],
+      [    :logout_tab     ,     'Log Out'      ,    destroy_person_session_path, person_signed_in?, true],    
       #------------------------------------------------------------------------------------------------#
       #    TAB NAME        |    DISPLAY TEXT    |    PATH            |    VISIBLE?    |    ENABLED?    #
       #------------------------------------------------------------------------------------------------#
@@ -87,6 +89,8 @@ Tabulous.setup do |config|
       [    :hookups      ,    :all_actions    ,    :hookups_tab    ],
       [    :people       ,    :all_actions    ,    :people_tab     ],
       [    :welcome       ,    :all_actions    ,   :hookups_tab     ],
+      [    :sessions       ,    :all_actions    ,   :signin_tab     ],
+      [    :registrations       ,    :all_actions    ,   :signin_tab     ],
       #------------------------------------------------------------#
       #    CONTROLLER    |    ACTION          |    TAB             #
       #------------------------------------------------------------#
@@ -98,7 +102,7 @@ Tabulous.setup do |config|
   #---------------------
 
   # By default, you cannot click on the active tab.
-  config.active_tab_clickable = false
+  config.active_tab_clickable = true
 
   # By default, the subtabs HTML element is not rendered if it is empty.
   config.always_render_subtabs = false
@@ -106,7 +110,7 @@ Tabulous.setup do |config|
   # Tabulous expects every controller action to be associated with a tab.
   # When an action does not have an associated tab (or subtab), you can
   # instruct tabulous how to behave:
-  config.when_action_has_no_tab = :raise_error      # the default behavior
+  config.when_action_has_no_tab = :render     # the default behavior
   # config.when_action_has_no_tab = :do_not_render  # no tab navigation HTML will be generated
   # config.when_action_has_no_tab = :render         # the tab navigation HTML will be generated,
                                                     # but no tab or subtab will be active

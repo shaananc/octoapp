@@ -1,6 +1,6 @@
 class Hookup < ActiveRecord::Base
-  belongs_to :person_a, class_name: "Person"
-  belongs_to :person_b, class_name: "Person"
+  belongs_to :person_a, class_name: "Person", :foreign_key => "person_a_id"
+  belongs_to :person_b, class_name: "Person", :foreign_key => "person_b_id"
   validates :person_a, :presence => true
   validates :person_b, :presence => true
   validate :different_people
