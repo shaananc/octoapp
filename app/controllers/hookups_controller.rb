@@ -3,7 +3,7 @@ class HookupsController < ApplicationController
   # GET /hookups.json
   before_filter :authenticate_person!
   def index
-    @hookups = Hookup.all
+    @hookups = Hookup.where( person_a_id: current_person.id)
 
     respond_to do |format|
       format.html # index.html.erb
