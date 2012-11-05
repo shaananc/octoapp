@@ -1,0 +1,21 @@
+class Hookup < ActiveRecord::Base
+<<<<<<< HEAD
+  belongs_to :person_a, class_name: "Person"
+  belongs_to :person_b, class_name: "Person"
+=======
+  belongs_to :person_a, class_name: "Person", :foreign_key => "person_a_id"
+  belongs_to :person_b, class_name: "Person", :foreign_key => "person_b_id"
+>>>>>>> 62af24f9d34f28bc8e6e27cfd4b58260604fed39
+  validates :person_a, :presence => true
+  validates :person_b, :presence => true
+  validate :different_people
+  
+  accepts_nested_attributes_for :person_a
+  accepts_nested_attributes_for :person_b
+
+  private
+  def different_people
+    errors[:person_b] << "Can't have two of the same user" unless person_a_id != person_b_id
+  end
+  
+end
