@@ -7,8 +7,9 @@ Octoapp::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  devise_for :people
-
+  devise_for :people do
+  get "/people/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
   
 
 
