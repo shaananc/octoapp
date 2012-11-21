@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20121024203334) do
     t.datetime "date"
     t.string   "person_a_id"
     t.string   "person_b_id"
-    t.string   "person_b_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
