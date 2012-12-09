@@ -10,6 +10,7 @@ group :development, :test do
   gem 'debugger'
   gem 'rspec-rails'
   gem "capybara"
+  gem "letter_opener"
 end
 group :production do
   gem 'pg'
@@ -27,6 +28,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'mail'
 gem 'jquery-rails'
 gem 'formtastic' , '~> 2.2.1'
 gem 'formtastic-plus-bootstrap', :github => 'antage/formtastic-plus-bootstrap'

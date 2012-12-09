@@ -20,10 +20,10 @@ class AddDeviseToPeople < ActiveRecord::Migration
       t.string   :last_sign_in_ip
 
       ## Confirmable
-      # t.string   :confirmation_token
-      # t.datetime :confirmed_at
-      # t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
+       t.string   :confirmation_token
+       t.datetime :confirmed_at
+       t.datetime :confirmation_sent_at
+       t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
       # t.integer  :failed_attempts, :default => 0 # Only if lock strategy is :failed_attempts
@@ -40,7 +40,7 @@ class AddDeviseToPeople < ActiveRecord::Migration
 
     add_index :people, :email,                :unique => true
     add_index :people, :reset_password_token, :unique => true
-    # add_index :people, :confirmation_token,   :unique => true
+    add_index :people, :confirmation_token,   :unique => true
     # add_index :people, :unlock_token,         :unique => true
     # add_index :people, :authentication_token, :unique => true
   end

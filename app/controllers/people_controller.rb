@@ -1,6 +1,10 @@
 class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
+  layout :none_for_xhr
+  def none_for_xhr
+    'application' unless request.xhr?
+  end
 
   def index
     @people = Person.all
@@ -82,11 +86,9 @@ class PeopleController < ApplicationController
     end
   end
 
+  def list
+    @p = Person.find(:all)
+  end
 
-def list
-  @p = Person.find(:all)
 end
-
-end
-
 

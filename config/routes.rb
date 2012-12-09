@@ -1,18 +1,13 @@
 Octoapp::Application.routes.draw do
-  
-
-  
-
-  
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  devise_for :people, :controllers => { :sessions => 'sessions', :registrations => 'registrations' }
+
   devise_for :people do
-  get "/people/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
-  end
-  
 
-
+    get "/people/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+   end
 
   get "welcome/index"
 
@@ -76,6 +71,6 @@ Octoapp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
 end
