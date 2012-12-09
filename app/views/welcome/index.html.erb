@@ -1,0 +1,54 @@
+<script language="javascript">
+	$(document).ready(function() {
+$("#footer").pinFooter();
+});
+
+$(window).resize(function() {
+$("#footer").pinFooter();
+});
+</script>
+
+<script language="javascript">
+$(function() {
+$("#btn_submit").click(function() {
+	$.ajax({
+		type : "GET",
+		url : "/people/new", // see the code below
+		error : function(xhr, status, ex) {
+			// handling with 'xhr', 'status' and 'ex' variables
+		},
+		success : function(data) {
+			$('<div id="popup" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;" class="popup">').append(data).append('</div>').insertAfter('#info');
+			$('#popup').bPopup();
+
+			// handling with 'xhr', 'status' and 'ex' variables
+		}
+	});
+
+	})
+	});
+
+</script>
+
+
+<script language="javascript">
+
+
+		$('#person_submit').bind('beforeSend', function(data) {
+			alert(data);
+		});
+
+	
+		
+</script>
+
+<section id="masthead">
+	<div id="masthead_container">
+		<div id="info">
+			<h1>Bored? Thirsty?</h1>
+			<h2> Find Love. </h2>
+			<input id="btn_submit" type="button" class ="btn btn-primary" value="Find a Date!"  >
+			<br>
+		</div>
+	</div>
+</section>
