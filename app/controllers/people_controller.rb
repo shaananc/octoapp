@@ -3,6 +3,7 @@ class PeopleController < ApplicationController
   # GET /people.json
   layout :none_for_xhr
   def none_for_xhr
+    
     'application' unless request.xhr?
   end
 

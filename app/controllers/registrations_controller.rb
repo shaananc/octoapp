@@ -1,7 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-  
   def create
-    
+
     build_resource
     if resource.save
       if resource.active_for_authentication?
@@ -15,8 +14,12 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      
-      return render action: "new", :layout => false
+      if xhr?
+        return render action: "new", :layout => false
+      else
+        return render action: "new"
+      end
+
     end
   end
 
@@ -38,7 +41,5 @@ class RegistrationsController < Devise::RegistrationsController
   def xhr?
     return request.headers['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest"
   end
-
-  
 
 end
