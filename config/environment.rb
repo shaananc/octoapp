@@ -13,4 +13,4 @@ ActionMailer::Base.smtp_settings = {
 ActionMailer::Base.delivery_method = :smtp
 
 # Initialize the rails application
-Octoapp::Application.initialize!
+PennCoffeeDates::Application.initialize!

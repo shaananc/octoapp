@@ -57,8 +57,8 @@ Tabulous.setup do |config|
       #------------------------------------------------------------------------------------------------#
       #    TAB NAME        |    DISPLAY TEXT    |    PATH            |    VISIBLE?    |    ENABLED?    #
       #------------------------------------------------------------------------------------------------#
-      [    :hookups_tab    ,    'Hookups'       ,    hookups_path    ,    true        ,    true        ],
-      [    :people_tab     ,    'People'        ,    people_path     ,    true        ,    true        ],
+      [    :hookups_tab    ,    'Dates'       ,    hookups_path    ,    current_person.try(:admin?)        ,    true        ],
+      [    :people_tab     ,    'People'        ,    people_path     ,    current_person.try(:admin?)        ,    true        ],
       [    :signin_tab     ,     'Sign In'      ,    new_person_session_path, !person_signed_in?, true ],
       [    :logout_tab     ,     'Log Out'      ,    destroy_person_session_path, person_signed_in?, true],    
       #------------------------------------------------------------------------------------------------#

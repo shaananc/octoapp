@@ -1,9 +1,14 @@
 class HookupsController < ApplicationController
+    load_and_authorize_resource
   # GET /hookups
   # GET /hookups.json
   
   
-  before_filter :authenticate_person!
+  #before_filter :authenticate_person!
+  def current_user
+    current_person
+  end
+  
   
     layout :none_for_xhr
   def none_for_xhr
@@ -36,6 +41,8 @@ class HookupsController < ApplicationController
       format.json { render json: @hookup }
     end
   end
+
+load_and_authorize_resource
 
   # GET /hookups/new
   # GET /hookups/new.json

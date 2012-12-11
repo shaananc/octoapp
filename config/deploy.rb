@@ -1,5 +1,5 @@
-set :application, "octoapp"
-set :repository,  "git@github.com:shaananc/octoapp.git"
+set :application, "PennCoffeeDates"
+set :repository,  "git@github.com:shaananc/PennCoffeeDates.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -13,7 +13,7 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 set:user, "ubuntu"
 ssh_options[:keys]=[File.join(ENV["HOME"],".ssh","EC2Key.pem")]
-set:deploy_to, "/var/www/ruby/octoapp"
+set:deploy_to, "/var/www/ruby/PennCoffeeDates"
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 

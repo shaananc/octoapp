@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Octoapp::Application.load_tasks
+PennCoffeeDates::Application.load_tasks
