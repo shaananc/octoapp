@@ -1,10 +1,16 @@
+ <% @options = Person.where('id != ? AND gender !=? AND confirmed_at IS NOT NULL', current_person.id,current_person.gender).random(3).sort %>
+ 
  <%= semantic_form_for @hookup do |f| %>
     <%= f.semantic_errors %>
     <%= f.inputs do %>
-    <%= f.input :person_a, :name => "person", :as => :select, :collection => Person.all, :label => "Person A" %>
-    <%= f.input :person_b, :name => "person", :as => :select, :collection => Person.all, :label => "Person B" %>
-    <%= f.input :date %>
+     <% f.input :person_a, :name => "person", :as => :select, :collection => Person.all, :label => "Person A" %>
+    <%= f.input :person_b, :name => "person", :as => :select, :collection => @options, :label => "Person B", :include_blank => false %>
+    <li class="select input required" id="hookup_person_b_input"><label class=" label" for="hookup_person_b_id">About them: </label>
+    	<div id="about"><p style="margin-top:5px"><%= @options.first.aboutme%></p></div></select>
+
+</li>
     <% end %>
     <%= f.actions :submit, :cancel%>
 
   <% end %>
+  

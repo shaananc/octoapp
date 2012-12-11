@@ -1,0 +1,15 @@
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">Penn Hookups</a>
+					<div class="nav-collapse">
+						<%= tabs %>
+						<% if current_person %>
+						<div class="brand" style="float:right; font-size:20px;">
+							
+							<%= current_person.name %></div><%end%>
+					</div>
+					
+				</div>
+			</div>
+		</div>

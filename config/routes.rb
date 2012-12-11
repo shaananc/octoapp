@@ -5,16 +5,21 @@ Octoapp::Application.routes.draw do
   devise_for :people, :controllers => { :sessions => 'sessions', :registrations => 'registrations' }
 
   devise_for :people do
-
     get "/people/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
-   end
+  end
 
   get "welcome/index"
 
-  resources :hookups
+  resources :hookups do
+    collection do
+      post 'get_about'
+      get 'get_about'
+    end
+  end
 
   resources :people
 
+#match 'hookups/getabout' => 'hookups#get_about'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

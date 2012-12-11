@@ -13,4 +13,6 @@ class Hookup < ActiveRecord::Base
     errors[:person_b] << "Can't have two of the same user" unless person_a_id != person_b_id
   end
   
+  
+  
 end

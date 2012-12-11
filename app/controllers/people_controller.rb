@@ -6,6 +6,7 @@ class PeopleController < ApplicationController
     'application' unless request.xhr?
   end
 
+
   def index
     @people = Person.all
 
@@ -89,6 +90,7 @@ class PeopleController < ApplicationController
   def list
     @p = Person.find(:all)
   end
+
 
 end
 

@@ -1,31 +1,22 @@
 class RegistrationsController < Devise::RegistrationsController
+  
   def create
-
-    build_resource
     
+    build_resource
     if resource.save
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_up(resource_name, resource)
-        if xhr?
-          return render:json => {:success => false, :errors => ["signed_up_but_#{resource.inactive_message}"]}
-        else
-          return render:json => {:success => false, :errors => ["Not JSON"]}
-        end
+        return render:action => 'people/date'
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?
         expire_session_data_after_sign_in!
-        
-        if xhr?
-          return render:json => {:success => false, :errors => ["signed_up_but_#{resource.inactive_message}"]}
-        else
-          return render:json => {:success => false, :errors => ["Not JSON"]}
-        end
-
+        return render:partial => 'waiting'
       end
     else
       clean_up_passwords resource
-      respond_with resource
+      
+      return render action: "new", :layout => false
     end
   end
 
@@ -37,15 +28,17 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def failure
-            if xhr?
-          return render:json => {:success => false, :errors => ["signed_up_but_#{resource.inactive_message}"]}
-        else
-          super
-        end
+    if xhr?
+      return render:json => {:success => false, :errors => ["signed_up_but_#{resource.inactive_message}"]}
+    else
+    super
+    end
   end
 
   def xhr?
     return request.headers['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest"
   end
+
+  
 
 end

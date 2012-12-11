@@ -18,16 +18,7 @@
 	</head>
 	<body>
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="/">Penn Hookups</a>
-					<div class="nav-collapse">
-						<%= tabs %>
-					</div>
-				</div>
-			</div>
-		</div>
+		<%= render :partial => 'layouts/navbar' %>
 
 		<%= yield %>
 		

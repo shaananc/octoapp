@@ -28,6 +28,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'random_record'
 gem 'mail'
 gem 'jquery-rails'
 gem 'formtastic' , '~> 2.2.1'

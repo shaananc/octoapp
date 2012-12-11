@@ -4,7 +4,6 @@
 
 <table class="table">
   <tr>
-    <th>Date</th>
     <th>Person A</th>
     <th>Person B</th>
     <th></th>
@@ -13,8 +12,8 @@
   </tr>
 
 <% @hookups.each do |hookup| %>
+  
   <tr>
-    <td><%= hookup.date %></td>
     <td><%= hookup.person_a.name %></td>
     <td><%= hookup.person_b.name %></td>
     <td><%= link_to 'Show', hookup %></td>

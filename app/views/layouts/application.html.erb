@@ -17,19 +17,7 @@
 		</script>
 	<body>
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="/">Penn Hookups</a>
-					<div class="nav-collapse">
-						<%= tabs %>
-						
-
-					</div>
-				</div>
-			</div>
-		</div>
-
+<%= render :partial => 'layouts/navbar' %>
 		<div class="container">
 			<% if alert %>
 			<div class="alert alert-error">
@@ -44,21 +32,14 @@
 
 			<%= yield %>
 		</div>
-
+<div class="push"></div>
+        </div>
 <footer>
 				<div id="tag">
 				***<br>
 				© 2012, Shaanan Cohney
 			</div>
 	</footer>
-
-		<footer>
-			<div id="tag">
-				***
-				<br>
-				© 2012, Shaanan Cohney
-			</div>
-		</footer>
 
 	</body>
 </html>

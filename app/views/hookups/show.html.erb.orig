@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Date:</b>
-  <%= @hookup.date %>
-</p>
-
-<p>
   <b>Person B:</b>
   <%= @hookup.person_a.name %>
 </p>
@@ -15,6 +10,11 @@
   <%= @hookup.person_b.name %>
 </p>
 
+
+<p>
+  <b>URL:</b>
+  <%= @hookup.url %>
+</p>
 
 <%= link_to 'Edit', edit_hookup_path(@hookup) %> |
 <%= link_to 'Back', hookups_path %>

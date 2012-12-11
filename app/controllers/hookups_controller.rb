@@ -1,7 +1,22 @@
 class HookupsController < ApplicationController
   # GET /hookups
   # GET /hookups.json
+  
+  
   before_filter :authenticate_person!
+  
+    layout :none_for_xhr
+  def none_for_xhr
+    'application' unless request.xhr?
+  end
+
+  def get_about
+    #debugger
+    @cur = Person.find(params[:id])
+    render :inline=>@cur.aboutme
+  end
+  
+  
   def index
     @hookups = Hookup.where( person_a_id: current_person.id)
 
@@ -26,10 +41,8 @@ class HookupsController < ApplicationController
   # GET /hookups/new.json
   def new
     @hookup = Hookup.new
-    
     ##BAD CODE! Change Later
-    @hookup.person_a = Person.find(:all)[0]
-    @hookup.person_b = Person.find(:all)[1]
+    @hookup.person_b = Person.where('id != ?', current_person.id).first
     rescue ActiveRecord::MissingAttributeError
     
     respond_to do |format|
@@ -46,10 +59,17 @@ class HookupsController < ApplicationController
   # POST /hookups
   # POST /hookups.json
   def create
+    
     @hookup = Hookup.new(params[:hookup])
-
+    @hookup.person_a = current_person
+    @hookup.url = wtm
+    
     respond_to do |format|
       if @hookup.save
+        
+        PersonMailer.date_email(@hookup.person_a,@hookup,@hookup.person_b).deliver
+        PersonMailer.date_email(@hookup.person_b,@hookup,@hookup.person_a).deliver 
+        
         format.html { redirect_to @hookup, notice: 'Hookup was successfully created.' }
         format.json { render json: @hookup, status: :created, location: @hookup }
       else
@@ -86,4 +106,33 @@ class HookupsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+#Gets a when to meet address
+  def wtm
+    require 'net/http'
+    require 'cgi'
+    require 'nokogiri'
+    
+    time=Time.new
+    cd = '0|1|2|'
+    for i in 0..7
+      cd=cd+time.year.to_s+'-'+time.month.to_s+'-'+(time.day+i).to_s+'|'
+    end
+    cd = cd+"3|4|5|6"
+    params ={
+      'NewEventName' => 'Coffee Date',
+      'DateTypes'=>'SpecificDates',
+      'PossibleDates'=>cd,
+      'NoEarlierThan'=>'9',
+      'NoLaterThan:'=>'0'
+    }
+    x = Net::HTTP.post_form(URI.parse('http://www.when2meet.com/SaveNewEvent.php'), params)
+    y = x.body
+    y = y[38..50]
+    
+    return CGI.escapeHTML(y).prepend("http://www.when2meet.com/")
+  end
+
+  
 end

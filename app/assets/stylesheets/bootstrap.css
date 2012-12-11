@@ -6,7 +6,10 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */
+ *= require bootstrap-without-forms
+ *= require formtastic-plus-bootstrap
+ * */
+
 
 article,
 aside,

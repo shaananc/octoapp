@@ -14,19 +14,19 @@
 ActiveRecord::Schema.define(:version => 20121024203334) do
 
   create_table "hookups", :force => true do |t|
-    t.datetime "date"
     t.string   "person_a_id"
     t.string   "person_b_id"
+    t.string   "url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "people", :force => true do |t|
     t.string   "name"
-    t.integer  "age"
-    t.string   "building"
     t.string   "gender"
-    t.string   "school"
+    t.text     "aboutme"
+    t.string   "url"
+    t.boolean  "admin"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false

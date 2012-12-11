@@ -7,11 +7,13 @@ class Person < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  
   has_many :hookups, :foreign_key => "person_a_id"
   validates :name, presence: true, uniqueness: true
-  validates :password_confirmation, presence: true
   validate :upenn? 
-  attr_accessible :name, :age, :building, :gender, :school, :id, :hookup_ids
+  validates :gender, presence: true
+  
+  attr_accessible :name, :gender, :id, :hookup_ids, :aboutme
 
   def upenn?
     domain_name =  Mail::Address.new(email).domain

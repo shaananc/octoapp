@@ -3,10 +3,7 @@
 <table class="table">
   <tr>
     <th>Name</th>
-    <th>Age</th>
-    <th>Building</th>
     <th>Gender</th>
-    <th>School</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,10 +12,7 @@
 <% @people.each do |person| %>
   <tr>
     <td><%= person.name %></td>
-    <td><%= person.age %></td>
-    <td><%= person.building %></td>
     <td><%= person.gender %></td>
-    <td><%= person.school %></td>
     <td><%= link_to 'Show', person %></td>
     <td><%= link_to 'Edit', edit_person_path(person) %></td>
     <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
