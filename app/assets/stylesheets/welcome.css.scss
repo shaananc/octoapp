@@ -113,3 +113,44 @@ min-width: 450px;
 padding: 25px;
   
 }
+
+
+.btn {
+    margin: 2em 0;
+    border: 1px solid #5e5e5e;
+    padding: 15px;
+    //height: 20px;
+    width: 210px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 0px; }
+    
+
+#new_popup{
+  display: none;
+  position: fixed;
+  opacity: 1;
+  z-index: 11000; 
+  left: 50%;
+  top: 200px;
+  width:1000px;
+}
+
+#choice{
+  display: none; 
+  position: fixed; 
+  opacity: 0.95; 
+  z-index: 11000; 
+  left: 50%; 
+  top: 200px; 
+  text-align: center; 
+  width: 350px;
+}
+
+#choice .btn-info {
+  width:150px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+

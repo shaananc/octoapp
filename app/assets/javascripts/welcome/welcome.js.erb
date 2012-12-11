@@ -1,0 +1,50 @@
+$(document).ready(function() {
+$("#footer").pinFooter();
+});
+
+$(window).resize(function() {
+$("#footer").pinFooter();
+});
+
+
+
+
+
+	$(function() {
+
+		$("#new_person").live('submit', function(e) {
+			e.preventDefault();
+			var body = $(this).serialize();
+			
+			$.post(this.action, body, function(data) {
+				var par = $("#new_form").parent().html($('<div id="new_form">').append(data));
+				//$("#new_person").remove();
+				//par.append(data);
+			});
+
+		});
+
+	}); 
+  $(document).ready(function() {
+  
+  	$('#hookup_person_b_id').live("change",function(){
+  		//alert($('#hookup_person_b_id option:selected').value());
+	var id = parseInt($('#hookup_person_b_id option:selected').val());
+  	$.ajax({
+		type : "GET",
+		//data: {'id':id},
+		url : "/people/"+id+"/about", // see the code below
+		error : function(xhr, status, ex) {
+			// handling with 'xhr', 'status' and 'ex' variables
+		},
+		success : function(data) {
+			$('#about').html(data);
+		}
+	}); 
+  	
+  	});
+  
+  
+  });
+  
+  
