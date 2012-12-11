@@ -1,6 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
 
+    puts ENV['SENDGRID_USERNAME']
+    puts ENV['SENDGRID_PASSWORD']
     build_resource
     if resource.save
       if resource.active_for_authentication?
