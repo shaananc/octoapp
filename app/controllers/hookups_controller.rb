@@ -15,11 +15,6 @@ class HookupsController < ApplicationController
     'application' unless request.xhr?
   end
 
-  def get_about
-    #debugger
-    @cur = Person.find(params[:id])
-    render :inline=>@cur.aboutme
-  end
   
   
   def index

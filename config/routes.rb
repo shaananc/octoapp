@@ -9,15 +9,16 @@ PennCoffeeDates::Application.routes.draw do
   end
 
   get "welcome/index"
+  
+  resources :hookups
 
-  resources :hookups do
-    collection do
-      post 'get_about'
-      get 'get_about'
+  resources :people do
+    member do
+      post 'about' => "people#about"
+      get 'about' => "people#about"
     end
   end
 
-  resources :people
 
 #match 'hookups/getabout' => 'hookups#get_about'
   # The priority is based upon order of creation:

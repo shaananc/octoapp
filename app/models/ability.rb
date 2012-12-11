@@ -18,6 +18,7 @@ class Ability
        else
          #can :read, Hookup
          can :create, Hookup
+         can :create, Person
          #can :manage, Hookup
          
        end

@@ -8,6 +8,13 @@ class PeopleController < ApplicationController
     'application' unless request.xhr?
   end
 
+def about
+    #debugger
+    @cur = Person.find(params[:id])
+    render :inline=>@cur.aboutme
+  end
+  
+
 
   def index
     @people = Person.all
