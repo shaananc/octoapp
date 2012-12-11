@@ -16,8 +16,9 @@ class Ability
          can :dashboard              # grant access to the dashboard
 
        else
-         can :read, :hookups
-         can :create, :hookups
+         #can :read, Hookup
+         can :create, Hookup
+         #can :manage, Hookup
          
        end
     #
