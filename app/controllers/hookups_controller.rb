@@ -131,7 +131,7 @@ class HookupsController < ApplicationController
     y = x.body
     y = y[38..50]
     
-    return CGI.escapeHTML(y).prepend("http://www.when2meet.com/")
+    return "http://www.when2meet.com/"+CGI.escapeHTML(y)
   end
 
   
