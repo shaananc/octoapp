@@ -3,3 +3,7 @@
 <p><h2> About them: <br /><%= @personb.aboutme %></h2></p><br />
 
 <p> The way it works is as follows. Use <%= link_to 'this link', @hookup.url %> below to help set up a time and email them at <%= @personb.email %> to work out the details.</p>
+<% if @hookup.person_a != @person %>
+<p>Recognize them as they'll be wearing: <%= @hookup.weara %></p>
+<% end %>
+
