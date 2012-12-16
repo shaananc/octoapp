@@ -1,38 +1,45 @@
 require 'spec_helper'
 
+include Warden::Test::Helpers
+
+
 describe Hookup, :js => true do
   fixtures :people
   
   before do
-    visit '/hookups'
-    click_link "New Hookup"
+    visit '/'
+    click_link 'Sign In'
+    fill_in 'Email', :with => 'shaananc@seas.upenn.edu'
+    fill_in 'Password', :with => '1234'
+    click_button 'Sign In'
+    @current_person = Person.where(:email => "shaananc@seas.upenn.edu").first
+    visit '/'
+    click_button 'Find a Date!'
   end
   
   ##Unit test
   it "needs to have people" do
+    
     subject.should_not be_valid
-    subject.person_a = Person.find(:all)[0]
-    subject.person_b = Person.find(:all)[1]
+    subject.person_a = @current_person
+    subject.person_b = Person.where("id != ?", @current_person.id).first
+    subject.weara = "funny hat"
     subject.should be_valid
+    
+    
   end
   
 
-  ##Integration
-  it "needs to have unique partners" do
-
-    select('Shaanan', :from => 'Person A')
-    select('Shaanan', :from => 'Person B')
-    click_button "Create Hookup"
-    error_message = "Can't have two of the same user"
-    page.should have_content(error_message)
-  end
+ 
   
-  ##Integration
+  ##Integration test
   it "should work overall" do
-    select('Shaanan', :from => 'Person A')
     select('Ariana', :from => 'Person B')
+    fill_in 'Piece of clothing to recognize you by', :with => 'funny hat'
+    #debugger;1
     click_button "Create Hookup"
-    page.should have_content("successful")
+    
+    page.should have_content("Congratulations!")
   end
   
 end

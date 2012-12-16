@@ -5,6 +5,8 @@ class HookupsController < ApplicationController
   
   
   #before_filter :authenticate_person!
+  
+  
   def current_user
     current_person
   end

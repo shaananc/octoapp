@@ -19,6 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe HookupsController do
+  include Devise::TestHelpers
 
   # This should return the minimal set of attributes required to create a valid
   # Hookup. As you add validations to Hookup, be sure to

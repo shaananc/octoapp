@@ -1,4 +1,5 @@
- <% @options = Person.where('id != ? AND gender !=? AND confirmed_at IS NOT NULL', current_person.id,current_person.gender).random(3).sort %>
+ <% @options = Person.where('id != ? AND gender !=? AND confirmed_at IS NOT NULL', @current_person.id,@current_person.gender).random(3).sort %>
+ <%  if @options.first%>
  
  <%= semantic_form_for @hookup do |f| %>
     <%= f.semantic_errors %>
@@ -14,4 +15,7 @@
     <%= f.actions :submit, :cancel%>
 
   <% end %>
-  
+ <% else %> 
+ Sorry!<br>
+ No one else has signed up yet!<br/>
+<%end %>

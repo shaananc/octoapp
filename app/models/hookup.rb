@@ -3,6 +3,7 @@ class Hookup < ActiveRecord::Base
   belongs_to :person_b, class_name: "Person", :foreign_key => "person_b_id"
   validates :person_a, :presence => true
   validates :person_b, :presence => true
+  validates :weara, :presence => true
   validate :different_people
   
   accepts_nested_attributes_for :person_a

@@ -1,13 +1,39 @@
+#1234 is the password
+
 shaanan:
   name: Shaanan
-  age: 21
-  building: Moore
-  gender: Male
-  school: SEAS
-  
+  email: shaananc@seas.upenn.edu
+  encrypted_password: $2a$10$IbuokglI1eMRqoPS.jCU/e0JADf7UHAnoY9PnFMn7KY58nL2bpwFq
+  aboutme: Is a really cool person
+  admin: true
+  gender: male
+  confirmed_at: <%= Time.now %>
+  id: 1
+    
 ariana:
   name: Ariana
-  age: 18
-  building: Moore
-  gender: Female
-  school: SEAS
+  email: ariana@seas.upenn.edu
+  encrypted_password: $2a$10$IbuokglI1eMRqoPS.jCU/e0JADf7UHAnoY9PnFMn7KY58nL2bpwFq
+  aboutme: Is a girl from Penn
+  gender: female
+  confirmed_at: <%= Time.now %>
+  id: 2
+  
+
+amy:
+  name: Amy Gutmann
+  email: amyg@upenn.edu
+  encrypted_password: $2a$10$IbuokglI1eMRqoPS.jCU/e0JADf7UHAnoY9PnFMn7KY58nL2bpwFq
+  aboutme: Is the President
+  gender: female
+  confirmed_at: <%= Time.now %>
+  id: 3
+  
+tiara:
+  name: Tiara Jennins
+  email: tiara@wharton.upenn.edu
+  encrypted_password: $2a$10$IbuokglI1eMRqoPS.jCU/e0JADf7UHAnoY9PnFMn7KY58nL2bpwFq
+  aboutme: Is not really anyone
+  confirmed_at: <%= Time.now %>
+  gender: female
+  id: 4

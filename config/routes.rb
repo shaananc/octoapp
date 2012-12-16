@@ -4,7 +4,7 @@ PennCoffeeDates::Application.routes.draw do
 
   devise_for :people, :controllers => { :sessions => 'sessions', :registrations => 'registrations' }
 
-  devise_for :people do
+  devise_scope :person do
     get "/people/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
   end
 
