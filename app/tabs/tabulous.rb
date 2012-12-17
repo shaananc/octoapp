@@ -57,6 +57,7 @@ Tabulous.setup do |config|
       #------------------------------------------------------------------------------------------------#
       #    TAB NAME        |    DISPLAY TEXT    |    PATH            |    VISIBLE?    |    ENABLED?    #
       #------------------------------------------------------------------------------------------------#
+      [    :rails_admin_tab,     'Rails Admin',       rails_admin_path, current_person.try(:admin?), true],  
       [    :hookups_tab    ,    'Dates'       ,    hookups_path    ,    current_person.try(:admin?)        ,    true        ],
       [    :people_tab     ,    'People'        ,    people_path     ,    current_person.try(:admin?)        ,    true        ],
       [    :signin_tab     ,     'Sign In'      ,    new_person_session_path, !person_signed_in?, true ],
