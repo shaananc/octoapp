@@ -6,6 +6,10 @@ $(window).resize(function() {
 $("#footer").pinFooter();
 });
 
+  $("select").live("keypress",function(){
+    $(this).trigger("change");
+});
+
 
 
 
