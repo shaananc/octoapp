@@ -12,6 +12,7 @@ group :development, :test do
   gem "capybara"
   gem "letter_opener"
   gem 'debugger'
+  gem 'mysql2'
 end
 group :production do
   gem 'pg'
